@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Pay On Delivery Not Active</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div style="text-align: center; padding: 20px;">
+        <h1>Pay On After Delivery</h1>
+        <p>Not currently active for all users. Updates are undergoing.</p>
+        <a href="{% url 'paybill' %}" style="text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">Back to Payment Options</a>
+    </div>
+</body>
+</html>

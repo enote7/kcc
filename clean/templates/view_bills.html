@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% load static %}
+  <title>clean@ billing_details</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body class="body5">
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Logout</a></li>
+      <li><a href="{% url 'welcome' %}">Welcome</a></li>
+      <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+      <li><a href="{% url 'paybill' %}">Pay Your Service Bill</a></li>
+      <li><a href="{% url 'view_bills' %}">Inputted Details</a></li>
+    </ul>
+  </nav>
+  <h1>Billing Details</h1>
+  <table>
+<tbody>
+  {% for billing in billing_details %}
+  <tr>
+    <td>{{ billing.customer }}</td>
+    <td>
+      {% for choice in billing.services.field.choices %}
+        {% if billing.services == choice.0 %}
+          {{ choice.1 }}
+        {% endif %}
+      {% endfor %}
+    </td>
+    <td>{{ billing.services }}</td>
+    <td>{{ billing.date }}</td>
+    <td>{{ billing.time }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+  </table>
+</body>
+</html>

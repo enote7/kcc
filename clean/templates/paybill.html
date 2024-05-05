@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>clean@ Bills</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body class="body2">
+    <nav style="font-size: 20px;">
+        <ul>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+            <li><a href="{% url 'welcome' %}">Welcome</a></li>
+            <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+            <li><a href="{% url 'paybill' %}">Pay Your Service Bill</a></li>
+        </ul>
+    </nav>
+    <h2 style="background-color: aliceblue; font-size: 28px;">
+        Make your Payment here 👇:<br /><br />
+        Options  ::
+    </h2>
+    <form action="{% url 'paybill' %}" method="POST" style="font-size: 30px;">
+        {% csrf_token %}
+        <input type="radio" id="mobile_money" name="payment_option" value="mobile_money" />
+        <label for="mobile_money">MTN Mobile Money</label><br /><br><br><br>
+        <input type="radio" id="airtel_money" name="payment_option" value="airtel_money" />
+        <label for="airtel_money">AIRTEL Money</label><br /><br><br><br>
+        <input type="radio" id="pay_on_delivery" name="payment_option" value="pay_on_delivery" onclick="showPopup()" />
+        <label for="pay_on_delivery">Pay On After Delivery</label><br /><br><br><br>
+        <input type="submit" value="Submit Payment" style="text-align: center; font-size: 20px;" />
+    </form>
+
+    <!-- Popup message -->
+    <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+        <h3>Pay On After Delivery Not Active</h3>
+        <p>Not currently active for all users. Updates are undergoing.<br> Please go on to suit <br> with available options Above thx.<br> Management</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <!-- JavaScript to show/hide popup -->
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

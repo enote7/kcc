@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #007fff); /* Gradient sky blue background */
+            color: #333; /* Dark text color */
+            text-align: center;
+            padding-top: 50px; /* Added padding at the top */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff; /* White background for content */
+            padding: 50px;
+            border-radius: 10px; /* Rounded corners for container */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff; /* Blue link color */
+            text-decoration: none; /* Remove underline */
+        }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Email has been Confirmed!</h1>
+        <p>You can now login to your account.</p>
+        <h1>
+            <p><a href="{% url 'login' %}">LOGIN HERE 😌</a></p>
+        </h1>
+    </div>
+</body>
+</html>

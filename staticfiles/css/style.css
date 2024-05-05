@@ -1,0 +1,303 @@
+ .pa {
+    text-align: left;
+    text-decoration-color: red;
+    color: red;
+    background-color: yellow;
+  }
+
+/* Apply styles to the body */
+.body1 {
+  background-image: url('../images/c1.webp');
+  background-size: cover;
+}
+.body6 {
+  background-image: url('../images/c6.jpg');
+  background-size: cover;
+}
+.body7 {
+  background-image: url('../images/c7.jpg');
+  background-size: cover;
+}
+.body2 {
+  background-image: url('../images/c4.jpg');
+  background-size: cover;
+}
+.body3 {
+  background-image: url('../images/c3.jpg');
+  background-size: cover;
+}
+.body4 {
+  background-image: url('../images/c4.jpg');
+  background-size: cover;
+}
+.body5 {
+  background-image: url(' https://www.bing.com/images/search?view=detailV2&ccid=PqeUk2qV&id=3FFCBB0C886B7ACD78028ED8676CC2BBD4F5C419&thid=OIP.PqeUk2qVkTta1EqzEZCEcwHaEo&mediaurl=https%3a%2f%2fwallpaperaccess.com%2ffull%2f3569121.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.3ea794936a95913b5ad44ab311908473%3frik%3dGcT11LvCbGfYjg%26pid%3dImgRaw%26r%3d0&exph=2400&expw=3840&q=clean+wall+papers&simid=608046578133577070&FORM=IRPRST&ck=4772930A16958567BE331744842CE879&selectedIndex=1&itb=0; ba');
+  background-size: cover;
+  text-decoration-color: red;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+/* Style the navigation links */
+nav a {
+  color: darkgreen;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* Style the form container */
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(91, 245, 103, 0.5);
+  border-radius: 10px;
+}
+.a {
+  text-align: center;
+  color: red;
+  text-decoration: wavy;
+}
+/* Style the form labels */
+label {
+  color: darkgreen;
+}
+
+/* Style the form input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Style the form submit button */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: rgb(133, 228, 55);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add hover effect to buttons and links */
+button:hover, input[type="submit"]:hover, a:hover {
+  opacity: 0.8;
+  color: blue;
+}
+
+/* Style the navigation bar */
+.nav1 {
+
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the navigation links */
+.nav1 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav1 ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nav1 ul li a {
+  color: rgb(184, 24, 24);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Add hover effect to navigation links */
+.nav1 ul li a:hover {
+  color: red;
+  background-color: blue;
+}
+
+/* Apply styles to the content */
+.content {
+  text-align: center;
+  color: rgb(122, 85, 14);
+  margin-top: 50px;
+}
+
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  background-color: black;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: rgb(13, 240, 228);
+  size: 3rem;
+}
+
+/* Increase text size and change color on hover */
+.content p:hover {
+  font-size: 18px;
+  color: red;
+}
+
+/* Style the navigation bar */
+nav.nav2 {
+  background-color: rgba(130, 245, 150, 0.7);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the navigation links */
+nav.nav2 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.nav2 ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav.nav2 ul li a {
+  color: rgb(58, 199, 15);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Add hover effect to navigation links */
+nav.nav2 ul li a:hover {
+  background-color: rgb(4, 4, 219);
+  color: rgb(223, 201, 11);
+  cursor: wait;
+}
+
+/* Apply styles to the content */
+h1,
+h2,
+p {
+  text-align: center;
+  color: rgb(5, 66, 10);
+}
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+
+form label {
+  color: rgb(89, 224, 62);
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: rgb(38, 236, 203);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: rgb(93, 125, 133);
+  padding: 10px;
+}
+
+/* Style the navigation links */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: rgb(114, 240, 97);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Add hover effect to navigation links */
+nav ul li a:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+/* Apply styles to the content */
+h1,
+h2,
+p .pa {
+  text-align: center;
+  color: rgb(243, 58, 20);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  color: rgb(129, 241, 125);
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: rgb(177, 9, 9);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+.EM {
+  background-color: darkblue;
+  color: red;
+}

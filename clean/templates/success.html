@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Success</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body
+    style=" background-repeat: no-repeat; background-size: cover; background-image: url('{% static 'images/c7.jpg' %}')" 
+    class="user-guide"
+  >
+    <h1 style="font-size: 50px; font-weight: 900;">Success!</h1>
+    <h2 style="color: rgb(255, 0, 98); font-size: 18px; background-color: yellow;">Please Check your<br> MAIL's Inbox 📩📩</h2>
+    <p style=" color:rgb(0, 0, 0); font-size: 20px; font-weight: 900; background-color: yellow;">
+     Thx for choosing us, Your ORDERS have been successfully saved. <br>You will receive a
+      confirmation msg shortly
+    </p>
+    <form action="none"><a href="{% url 'welcome' %}" style="color: rgb(155, 152, 152); font-size: 25px; font-weight: 700;">Go to Home page</a></form>
+  </body>
+</html>

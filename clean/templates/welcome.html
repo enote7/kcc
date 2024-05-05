@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Welcome to KASAJJA CLEANING COMPANY</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        .download-icon {
+            width: 24px; /* Adjust the size as needed */
+            height: 24px; /* Adjust the size as needed */
+            vertical-align: middle;
+            margin-right: 5px; /* Adjust spacing as needed */
+        }
+
+
+        .download-link {
+            display: inline-block;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .download-link:hover {
+            background-color: #0056b3;
+        }
+
+        .download-icon {
+            margin-right: 5px;
+        }
+
+
+        .welcome-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        /* Styles for slideshow */
+        .slideshow-container {
+            max-width: 450px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides img {
+            width: 200px; /* Adjust the width to make the images smaller */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make the images oval-shaped */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .user-guide {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .section-title {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .user-guide {
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .subsection-title {
+        color: #555;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .guide-list {
+        margin-left: 20px;
+      }
+
+      .guide-list-item {
+        margin-bottom: 5px;
+      }
+      .slideshow-container {
+        max-width: 500px;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      .oval-image {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body
+    style="background-image: url('{% static 'images/c7.jpg' %}')"
+    class="user-guide"
+  >
+    <nav style="font-size: 20px">
+      <ul>
+        <li><a href="{% url 'index' %}">Logout</a></li>
+        <li><a href="{% url 'welcome' %}">Welcome</a></li>
+        <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+        <li><a href="{% url 'paybill' %}">Pay Your Service Bill</a></li>
+      </ul>
+    </nav>
+    <h1>Welcome to KASAJJA CLEANING COMPANY</h1>
+
+    <h2 style="background-color: yellow; color: red; font-size: 20px">
+      The following user guide can direct on how to use the system
+    </h2>
+
+    <div class="user-guide">
+      <div class="welcome-container" style="background-color: #333;">
+        <h2>Welcome, <h2 style="color: rgb(255, 0, 255);">{{ user.username }}</h2> <h2>To Your Fitness Hub </h2> </h2>
+      </div>
+  
+      <div class="section-title">User Guide</div>
+
+      <div class="subsection-title">Services Offered</div>
+      <ul class="guide-list">
+        <li class="guide-list-item">
+          Basic House Cleaning: A service that involves general house cleaning
+          jobs.
+        </li>
+        <li class="guide-list-item">Deep Cleaning</li>
+        <li class="guide-list-item">
+          Spring Cleaning: This is a more comprehensive clean than a basic
+          clean.
+        </li>
+        <li class="guide-list-item">
+          Laundry Services: Wash, dry, and fold clothes while cleaning the
+          homeowner's house.
+        </li>
+      </ul>
+
+      <div class="subsection-title">Pricing</div>
+      <ul class="guide-list">
+        <li class="guide-list-item">Each @</li>
+        <li class="guide-list-item">300,000ugx</li>
+        <li class="guide-list-item">650,000ugx</li>
+        <li class="guide-list-item">650,000ugx</li>
+        <li class="guide-list-item">1,000ugx per cloth</li>
+      </ul>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="{% static 'images/a1.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/a2.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/a3.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/a4.jpeg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/a5.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/c7.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/c6.jpg' %}" style="width: 250px; height: 150px;">
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+      <div class="subsection-title">Management Features</div>
+      <ul class="guide-list">
+        <li class="guide-list-item">
+          Customer Management:
+          <ul class="guide-list">
+            <li class="guide-list-item">
+              Allows the company to manage its customer accounts.
+            </li>
+            <li class="guide-list-item">
+              The company can add new customers, update their contact
+              information, and view their service history.
+            </li>
+            <li class="guide-list-item">
+              The customer management functionality also allows the company to
+              create customer profiles, which contain the customer’s contact
+              information, service preferences, and billing details.
+            </li>
+          </ul>
+        </li>
+        <li class="guide-list-item">
+          Service Management:
+          <ul class="guide-list">
+            <li class="guide-list-item">
+              Allows the cleaning company to manage its cleaning services.
+            </li>
+            <li class="guide-list-item">
+              The company can create service packages, set prices, and update
+              availability.
+            </li>
+            <li class="guide-list-item">
+              The system also allows the company to manage service orders, which
+              include details such as the type of service required, the date and
+              time of the service, and the locationof the service.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <br /><br />
+    <h1 style="background-color: rgb(9, 80, 212); color: #f9f9f9">
+      PLACE YOUR ORDERS HERE
+    </h1>
+        <a href="{% url 'download_order_report' %}" class="download-link">
+          <img src="{% static 'images/image.jpg' %}" alt="Download Icon" class="download-icon">
+          Download Order Report
+      </a>
+    <form action="{% url 'place_order' %}">
+      <button type="submit">Place Order (s)</button>
+    </form>
+    <!-- Dot container -->
+    <div class="dot-container" style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+    
+    <!-- Your JavaScript code -->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    </script>
+</body>
+</html>

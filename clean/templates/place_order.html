@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="body7">
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+            <li><a href="{% url 'welcome' %}">Welcome</a></li>
+            <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+            <li><a href="{% url 'paybill' %}">Pay Your Service Bill</a></li>
+        </ul>
+    </nav>
+    <h1 style="background-color: aliceblue;">Select Services</h1>
+    <form method="POST" action="{% url 'place_order' %}">
+      <h1 style="background-color: aqua;">fisrt option is reuired, the rest are optional.</h1>
+      {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html> 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>clean@login In</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        margin: 0;
+        background-image: url("{% static "images/qq.jpg" %}");
+        background-size: cover;
+      }
+      .logo-containe {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Aspect ratio for 16:9 video */
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .logo-containe iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 80%;
+        max-width: 1200px;
+        margin-top: 50px;
+        background-color: rgba(100, 98, 98, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .form-container {
+        width: 50%;
+        margin-right: 20px;
+      }
+
+      .logo-container {
+        width: 200px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .actions-container {
+        width: 50%;
+      }
+
+      .actions-container h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 30px; text-align: justify; color: rgb(253, 5, 5)">
+      KASAJJA <br />CLEANING COMPANY <br /><br />
+      <div class="logo-container">
+        <img src="{% static 'images/a1.jpg' %}" alt="Company Logo" />
+      </div>
+    </h1>
+
+    <div class="container">
+      <div class="form-container">
+        <h2 class="a" style="font-size: 30px; color: yellow">Login</h2>
+        {% if request.GET.next %}
+        <p>Please log in to access <strong>{{ request.GET.next }}</strong>.</p>
+        {% endif %} {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+        {% endif %}
+        <form
+          method="post"
+          style="
+            background-color: rgba(0, 123, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+          "
+          action="{% url 'index' %}"
+        >
+        <div id="invalid-login-popup" class="popup">
+          <span class="close-popup">&times;</span>
+          <p style="color: rgb(92, 0, 0); font-size: 15px;">Invalid email or password. Please try again.</p>
+        </div>
+      
+        {% csrf_token %}
+          <div style="margin-bottom: 10px">
+            <label for="id_email">Email:</label><br />
+            <input type="email" id="id_email" name="email" />
+          </div>
+          <div style="margin-bottom: 10px">
+            <label for="id_password">Password:</label><br />
+            <input type="password" id="id_password" name="password" />
+          </div>
+          <button
+            type="submit"
+            style="
+              background-color: #fff;
+              color: #007bff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+            "
+          >
+            Login
+          </button>
+        </form>
+        <form action="{% url 'password_reset' %}" method="get">
+          <button
+            type="submit"
+            style="
+              background-color: #007bff;
+              color: #fff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+            "
+          >
+            Forgot Password?
+          </button>
+        </form>
+    
+
+      </div>
+
+      <div class="actions-container">
+        <h2 style="font-size: 30px; color: yellow">Admin-Login to database</h2>
+        <form
+          action="{% url 'admin:login' %}"
+          method="post"
+          style="background-color: rgb(12, 12, 100)"
+        >
+          {% csrf_token %}
+          <button
+            type="submit"
+            style="background-color: rgb(5, 135, 250); font-size: 20px"
+          >
+            Admin-Login
+          </button>
+        </form>
+
+        <br />
+        <h2 style="font-size: 30px; color: yellow">Signup</h2>
+        <form
+          action="{% url 'signup' %}"
+          style="background-color: rgb(12, 12, 100)"
+        >
+          <button type="submit" style="font-size: 25px">SIGN UP</button>
+        </form>
+        <br />
+        <div class="logo-containe">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GkTrrDJ9wZE"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    // Function to show the popup
+    function showPopup() {
+      document.getElementById('invalid-login-popup').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('invalid-login-popup').style.display = 'none';
+    }
+
+    // Check if the 'invalid_login' parameter exists in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const invalidLogin = urlParams.get('invalid_login');
+
+    if (invalidLogin === 'true') {
+      showPopup(); // Show the popup if 'invalid_login' is true
+    }
+
+    // Close the popup when the close button is clicked
+    document.querySelector('.close-popup').addEventListener('click', closePopup);
+
+    // Close the popup after 5 seconds automatically
+    setTimeout(closePopup, 2000);
+  </script>
+</body>
+</html>

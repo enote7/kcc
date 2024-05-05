@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Review Your Orders</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body class="body7">
+    <nav>
+      <ul>
+        <li><a href="{% url 'index' %}">Logout</a></li>
+        <li><a href="{% url 'welcome' %}">Welcome</a></li>
+        <li><a href="{% url 'review_orders' %}">Review Orders</a></li>
+      </ul>
+    </nav>
+    <h1>Review Customer Orders</h1>
+
+    <ul>
+      {% for order in orders %}
+        <li>{{ order.service1 }}</li>
+        {% if order.service2 %}
+          <li>{{ order.service2 }}</li>
+        {% endif %}
+        {% if order.service3 %}
+          <li>{{ order.service3 }}</li>
+        {% endif %}
+        <li style="color: red;">{{ order.CustomerName }}</li>
+        <br>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
